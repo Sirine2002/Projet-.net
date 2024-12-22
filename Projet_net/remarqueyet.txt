@@ -1,0 +1,60 @@
+classe context: 
+* db context options: n3adiw fih chaine de connexion w data base provider(type de bdd bech ne5dmou 3lihem)
+
+*liaison m3a base de donnée, teb3a orm mte3i heka 3leh n3ayat lel constructeur mte3i w n7el w nsakar { }: classe super fel java 
+
+*chaine de connexion fel appsettings.json
+
+classe program.cs:
+*nzidou connexion mte3na (get connection string)
+
+classe seeder data:
+* des méthodes statiques
+* IApplicationBuilder: 5ater réellement bech n3aytelha fel program.cs ou bien Home ama kent nejem nesna3ha f ay blasa.
+*bech naamel des données de test bech on accéde le base mte3i 
+*kifeh njib classe context hna?: service scope bech n accedi lel classe context, bech ki naamel context.departement nejem ne5dem 3lih
+*à chaque fois bech ninseri departement mte3i?: la, ella ma tkoun table departement fera8 walla, kifeh?
+naamel .any bech traja3 true or false
+malyena walla  fer8a 
+*.Add t ajouti élément par élément w AddRange tajouti une liste
+*naamlou save changes bech yetzedou les données
+
+classe program.cs:
+*n3aytou lel seeder data.seed (app) just 9bal run
+
+dossier controlleur:
+*depcontroller: houwa zedha route (c'est un controlleur teba3 api cad bech yodhher fel swagger)
+*naamlou constructeur w ninjectiw classe context mte3na
+*httpget ta7tha traitement asynchrone
+*await: ma yaamel return mte3ou ken ma context.dep.tolist tkamel
+tjibli les listes lkol
+
+
+
+*AccountControlleur: bech naamel 2 méthodes wa7da login w wa7da register
+9bal kenna naamlou constructeur w injectiw fih context w baad  walina naamlou constructeur w injectiw fih service
+3melna constructeur w injectina user manager
+
+*httpPost register: te5ou comme parametre register DTO 
+
+*ModelState:ModelState est un objet utilisé pour valider et gérer l'état des données envoyées par un formulaire dans les actions d'un contrôleur MVC.
+Si le modèle est valide, on peut procéder au traitement.  // Exemple : Ajouter le produit à la base de données
+Si le modèle n'est pas valide, on renvoie la vue avec les erreurs de validation 
+
+password bech neb3thouha dans une méthode à part bech naamelha hashage mte3ha 
+sna3na objet de type user 5dha user name w email mel regiser_dto 
+fdhol ken password ki naamelou enregistrer lezem ykoun hashée west base
+
+baad fel departement controller tzid kelmet [Autorize] bech twali accessible ken baad authentification
+
+*Q:kenna context nijjektiwha toul f controlleur, mahiyech method behya :
+	Crud ma5dmoum west controlleur
+donc_> naamlou couche intermédiaire entre application et source de données n5aliw fiha les méthodes mte3na a7san w naamlou appel fel controlleur: code divisé sur plusieurs couches, coté maintenance 5ir 
+
+
+dans ce cas, la gestion du profil de l'utilisateur avec ASP.NET Core Identity
+peut être réalisée directement à partir du UserManager<ApplicationUser>, 
+ce qui élimine la nécessité d'un repository dédié pour la gestion des profils des utilisateurs.
+
+
+
